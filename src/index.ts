@@ -1,5 +1,5 @@
 import { createApp } from "vue/dist/vue.esm-browser";
-import SButton from "./button";
+import SButton from "./Button";
 import SFCButton from "./SFCButton.vue";
 import JSXButton from "./JSXButton";
 
