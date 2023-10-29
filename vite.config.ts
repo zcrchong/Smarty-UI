@@ -42,6 +42,16 @@ export default defineConfig({
             formats: ["esm", "umd","iife"],
         },
     },
+    test: {
+        // enable jest-like global test APIs
+        globals: true,
+        // 用于提供测试所需要的 Dom 仿真
+        environment: 'happy-dom',
+        // 支持tsx组件，很关键
+        transformMode: {
+            web: [/.[tj]sx$/]
+        }
+    }
 });
 
 
