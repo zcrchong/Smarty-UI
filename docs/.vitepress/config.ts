@@ -16,7 +16,6 @@ export default defineConfig({
     title: "🔨  Smarty-UI",
     themeConfig: {
         sidebar
-
     },
     markdown: {
         config: (md) => {
