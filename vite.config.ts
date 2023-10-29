@@ -1,3 +1,4 @@
+// @ts-ignore
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -31,15 +32,15 @@ export default defineConfig({
     ],
     build: {
         rollupOptions,
-        minify:false,
-        cssCodeSplit: true,   // 追加： cssCodeSplit 这个选项是为了决定在编译的时候是否要独立输出 css。显然这里面应该选择为 true。
+        minify: 'terser', // boolean | 'terser' | 'esbuild'
+        sourcemap: true, // 输出单独 source文件
+        brotliSize: true,  // 生成压缩大小报告
+        cssCodeSplit: true,
         lib: {
             entry: "./src/entry.ts",
             name: "SmartyUI",
             fileName: "smarty-ui",
-            // 导出模块格式
-            // @ts-ignore
-            formats: ["esm", "umd","iife"],
+            formats: ["esm", "umd", "iife"], // 导出模块类型
         },
     },
     test: {
